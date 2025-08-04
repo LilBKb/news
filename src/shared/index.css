@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  font-family:"Inter";
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.container{
+  padding: 24px 24px;
+  min-height: 100%;
+
+}
+
+.app.dark .container {
+  background-color: #23272f;
+}
+
+.app.light .container{
+  background-color: white;
+}
+
+.app.dark p,
+.app.dark h3,
+.app.dark h1,
+.app.dark .title,
+.app.dark .info{
+  color:#f6f7f9
+}
+
+.app.light p,
+.app.light h3,
+.app.light h1,
+.app.light .title,
+.app.light .info{
+  color: black;
+}
