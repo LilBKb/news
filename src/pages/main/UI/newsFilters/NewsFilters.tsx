@@ -6,7 +6,7 @@ import Slider from "@/features/slider/UI/Slider/Slider";
 import { useGetCategoriesQuery } from "@/entities/category/Api/categoryApi";
 import { setFilters } from "@/entities/news/Model/NewsSlice";
 import { IFilters } from "@/interfaces";
-import '@/pages/main/UI/newsFilters/NewsFilters.css'
+import styles from './styles.module.css'
 
 
 
@@ -22,7 +22,7 @@ const NewsFilters = ({filters}:Props) =>{
     const {data}=useGetCategoriesQuery(null)
     return(
 
-        <div className='filters'>
+        <div className={styles.filters}>
             {data ? (<Slider>
             <Categories 
             categories={data?.categories} 

@@ -6,7 +6,7 @@ import { TOTAL_PAGES } from "@/shared/constants/Constants";
 import { useDebounce } from "@/shared/hooks/useDebounce";
 import { NewsList } from "@/widgets/news";
 import NewsFilters from "../newsFilters/NewsFilters";
-import './NewsByFilters.css'
+import styles from './styles.module.css'
 
 
 
@@ -42,7 +42,7 @@ const NewsByFilters=()=>{
 
 
     return(
-        <section className='section__news__by__filters'>
+        <section className={styles.section}>
             <NewsFilters filters={filters}/>
             <PaginationWrapper
             top

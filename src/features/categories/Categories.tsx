@@ -1,5 +1,5 @@
 import { ForwardedRef, forwardRef } from 'react';
-import './Categories.css';
+import styles from './styles.module.css'
 
 
 interface Props{
@@ -10,10 +10,10 @@ interface Props{
 
 const Categories =forwardRef(({categories,setSelectedCategory,selectedCategory}:Props,ref:ForwardedRef<HTMLDivElement>)=>{
     return(
-        <div ref={ref} className='categories'>
+        <div ref={ref} className={styles.categories}>
             {categories.map(category=>{
                 return(
-                    <button onClick={()=>setSelectedCategory(category)} className={selectedCategory === category ? 'active' : 'item'} key={category}>
+                    <button onClick={()=>setSelectedCategory(category)} className={selectedCategory === category ? styles.active : styles.item} key={category}>
                         {category}
                     </button>
                 )

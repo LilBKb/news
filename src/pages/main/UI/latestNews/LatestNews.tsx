@@ -1,14 +1,13 @@
 import BannersList from "@/widgets/news/UI/bannersList/BannersList"
 import { useGetLatestNewsQuery } from "@/entities/news/Api/newsApi"
-import '@/pages/main/UI/latestNews/LatestNews.css'
-
+import styles from './styles.module.css'
 
 const LatestNews=()=>{
 
     const {data,isLoading}=useGetLatestNewsQuery(null)
 
     return(
-        <section className='section'>
+        <section className={styles.section}>
             <BannersList  banners={data && data?.news} isLoading={isLoading}/>
         </section>
     )

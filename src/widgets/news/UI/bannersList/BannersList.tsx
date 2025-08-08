@@ -1,6 +1,6 @@
 import withSkeleton from "@/shared/hocs/withSkeleton";
 import { NewsBanner } from "@/entities/news";
-import './BannersList.css'
+import styles from './styles.module.css'
 import { INews } from "@/entities/news/Model/types";
 
 
@@ -10,7 +10,7 @@ interface Props{
 
 const BannersList=({banners}:Props)=>{
     return(
-        <ul className='banners'>
+        <ul className={styles.banners}>
             {banners?.map(banner=>{
                 return(
                     <NewsBanner key ={banner.id} item={banner}/>

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import './Slider.css'
+import styles from './styles.module.css'
 import { useTheme } from '@/app/providers/ThemeProvider';
 
 
@@ -26,10 +26,10 @@ const Slider =({children,step=150}:Props)=>{
 
 
     return(
-        <div className={`slider ${ isDark ? 'dark' : 'light'}`}>
-            <button className='arrow' onClick={scrollLeft}>{'<'}</button>
+        <div className={`${styles.slider} ${ isDark ? styles.dark : styles.light}`}>
+            <button className={styles.arrow} onClick={scrollLeft}>{'<'}</button>
             {React.cloneElement(children,{ref:sliderRef})}
-            <button className='arrow' onClick={scrollRight}>{'>'}</button>
+            <button className={styles.arrow} onClick={scrollRight}>{'>'}</button>
         </div>
     )
 }

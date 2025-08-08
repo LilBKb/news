@@ -1,6 +1,6 @@
 import withSkeleton from "@/shared/hocs/withSkeleton";
 import NewsItem from "@/entities/news/UI/NewsItem/NewsItem";
-import './NewsList.css'
+import styles from './styles.module.css'
 import { INews } from "@/entities/news/Model/types";
 
 
@@ -10,7 +10,7 @@ interface Props{
 
 const NewsList=({news}:Props)=>{
     return(
-        <ul className='list'>
+        <ul className={styles.list}>
             {news?.map(item =>{
                 return <NewsItem  key={item.id} item={item}/>
             })}

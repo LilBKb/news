@@ -1,6 +1,6 @@
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { PaginationProps } from '@/interfaces';
-import './Pagination.css';
+import styles from './styles.module.css'
 
 
 
@@ -8,16 +8,16 @@ const Pagination=({totalPages,currentPage,handlePrevPage,handleNextPage,handlePa
     const {isDark} = useTheme();
     return(
         <>
-            <div className={`pagination ${isDark?'dark' : 'light'}`}>
-                <button onClick={handlePrevPage} disabled={currentPage===1} className='arrow'>{'<'}</button>
-            <div className='list__pagination'>
+            <div className={`${styles.pagination} ${isDark?styles.dark : styles.light}`}>
+                <button onClick={handlePrevPage} disabled={currentPage===1} className={styles.arrow}>{'<'}</button>
+            <div className={styles.list}>
                 {[...Array(totalPages)].map((_,index)=>{
-                    return  <button onClick={()=>handlePageClick(index+1)} disabled={index+1===currentPage} className='page__number' key={index}>{index+1}</button>
+                    return  <button onClick={()=>handlePageClick(index+1)} disabled={index+1===currentPage} className={styles.pageNumber} key={index}>{index+1}</button>
                 })}
 
             </div>
 
-                <button onClick={handleNextPage} disabled={currentPage>=totalPages} className='arrow'>{'>'}</button>
+                <button onClick={handleNextPage} disabled={currentPage>=totalPages} className={styles.arrow}>{'>'}</button>
             </div>
         </>
     );

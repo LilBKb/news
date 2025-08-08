@@ -1,5 +1,5 @@
 import LatestNews from './latestNews/LatestNews';
-import './main.css'
+import styles from './styles.module.css'
 import NewsByFilters from './newsByFilters/NewsByFilters';
 
 
@@ -9,7 +9,7 @@ const Page=()=>{
     
     
     return(
-        <main className='main'>
+        <main className={styles.main}>
             <LatestNews/>
             <NewsByFilters/>
             

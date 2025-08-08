@@ -1,5 +1,5 @@
 import { useTheme } from '@/app/providers/ThemeProvider';
-import './Search.css'
+import styles from './styles.module.css'
 
 
 interface Props{
@@ -10,8 +10,8 @@ interface Props{
 const Search=({keywords,setKeywords}:Props)=>{
     const {isDark} = useTheme();
     return(
-        <div className={`search ${isDark?'dark':'light'}`}>
-            <input type='text' value={keywords} className='input' onChange={(e)=>setKeywords(e.target.value)}
+        <div className={`${styles.search} ${isDark?styles.dark:styles.light}`}>
+            <input type='text' value={keywords} className={styles.input} onChange={(e)=>setKeywords(e.target.value)}
             placeholder='JavaScript'/>
         </div>
     );
